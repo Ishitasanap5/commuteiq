@@ -5,7 +5,7 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-
+import routeRoutes from "./routes/routeRoutes.js";
 
 connectDB();
 
@@ -16,7 +16,7 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
-
+app.use("/api/routes", routeRoutes);
 app.get("/", (req, res) => {
   res.send("CommuteIQ API running");
 });
